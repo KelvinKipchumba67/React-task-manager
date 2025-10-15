@@ -3,30 +3,30 @@ import './App.css';
 
 // Import your components here
 // import Button from './Button';
-// import Navbar from './components/Navbar';
+ import Navbar from './navbar';
 // import Footer from './components/Footer';
-// import TaskManager from './components/TaskManager';
+import TaskManager from './TaskManager';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      {/* Navbar component will go here */}
+      <Navbar />
       <header className="bg-white dark:bg-gray-800 shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        {/* <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl font-bold">TaskQuest Manager</h1>
-        </div>
+        </div> */}
       </header>
 
       <main className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg p-6">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-lg mb-4">
+            {/* <p className="text-lg mb-4">
               Edit <code className="font-mono bg-gray-200 dark:bg-gray-700 p-1 rounded">src/App.jsx</code> and save to test HMR
-            </p>
+            </p> */}
             
-            <div className="flex items-center gap-4 my-4">
+            {/* <div className="flex items-center gap-4 my-4">
               <button
                 onClick={() => setCount((count) => count - 1)}
                 className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
@@ -40,10 +40,10 @@ function App() {
               >
                 +
               </button>
-            </div>
+            </div> */}
 
             <p className="text-gray-500 dark:text-gray-400 mt-4">
-              Implement your TaskManager component here
+              <TaskManager />
             </p>
           </div>
         </div>
