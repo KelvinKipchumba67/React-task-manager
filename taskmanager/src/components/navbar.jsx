@@ -1,22 +1,14 @@
 // src/components/Navbar.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Button from "./Button";
+import { useTheme } from "./theme";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
+  const { theme, setTheme } = useTheme();
 
-  // Apply theme to document
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-    }
-  }, [darkMode]);
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <nav className="bg-white dark:bg-gray-800 shadow-md py-4 px-6 flex justify-between items-center">
@@ -24,16 +16,13 @@ const Navbar = () => {
       <h1 className="text-xl font-bold text-blue-600 dark:text-blue-400">
         TaskQuest
       </h1>
-
-   
-
       {/* Dark mode toggle */}
       <Button
         size="sm"
         variant="secondary"
-        onClick={() => setDarkMode(!darkMode)}
+        onClick={toggleTheme}
       >
-        {darkMode ? "Light" : "Dark"}
+        {theme === "dark" ? "Light" : "Dark"}
       </Button>
     </nav>
   );
